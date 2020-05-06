@@ -71,24 +71,21 @@ $('#send').click(function (event) {
   $('.output').append(addBlock(name, email, avatar));
 })
 
-// Домашнее задание: 
 
 function getData() {
   $.ajax({
     url: 'https://reqres.in/api/users?page=2',
     success: function (data) {
-      console.log(data);
+        addUser(data.data[0]);
+        addUser(data.data[1]);
+        addUser(data.data[2]);
+        addUser(data.data[3]);
+        addUser(data.data[4]);
+        addUser(data.data[5]);
     }
   })
 }
-
-let testUser = {
-  avatar: "https://s3.amazonaws.com/uifaces/faces/twitter/follettkyle/128.jpg",
-  email: "michael.lawson@reqres.in",
-  first_name: "Michael",
-  id: 7,
-  last_name: "Lawson"
-}
+getData();
 
 function addUser(user) {
   let container = $('<div>');
@@ -96,6 +93,16 @@ function addUser(user) {
   let containerLast_name = $('<div>');
   let containerEmail = $('<div>')
   let containerAvatar = $('<img>');
+
+  let closeX = $('<div>');
+  closeX.addClass('close');
+  closeX.text('x');
+  container.append(closeX);
+
+  closeX.on('click', function(){
+    $(this).closest('.user').remove();
+  })
+
 
   containerFirst_name.text(user.first_name);
   containerLast_name.text(user.last_name);
@@ -111,4 +118,4 @@ function addUser(user) {
   $('.users').append(container);
 
 }
-addUser(testUser);
+
