@@ -1,0 +1,71 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.form {
+  display: inline-block;
+  padding: 15px;
+  background-color: darkred;
+}
+
+.field {
+  margin: 10px;
+}
+.field label {
+  width: 100px;
+  display: inline-block;
+  color: yellow;
+}
+
+#send {
+  margin-left: 10px;
+  display: inline-block;
+  background-color: chartreuse;
+  border-radius: 3px;
+  width: 100px;
+}
+.output {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.item {
+  padding: 10px;
+  background-color: darkred;
+  box-shadow: 10px 10px 10px black;
+  color: white;
+  margin: 15px;
+  position: relative;
+}
+.item img {
+  width: 100%;
+}
+
+.close {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: darkblue;
+  position: absolute;
+  right: 0;
+  top: 0;
+  cursor: pointer;
+  transform: translate(50%, -50%);
+}
+
+.user {
+  width: 180px;
+  box-shadow: 10px 10px 10px blue;
+  position: relative;
+  background-color: darkblue;
+  color: yellow;
+  margin: 20px 10px;
+  padding: 5px;
+}
+.user img {
+  width: 100%;
+}
